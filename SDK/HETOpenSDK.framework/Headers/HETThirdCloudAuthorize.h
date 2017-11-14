@@ -24,10 +24,11 @@
 
 /**
  *  获取授权码
- *
- *  @param completedBlock 获取授权码回调
+ *   account      用户账号（首次授权时传入）
+ *   openId     （二次授权时传入，若同时传入account和openId，则认为是二次授权）
+ *  @param completedBlock 授权认证回调
  */
-- (void)getAuthorizationCodeWithCompleted:(void(^)(NSDictionary *responseDic, NSError *error))completedBlock;
+- (void)getAuthorizationCodeWithAccount:(NSString *)account withOpenId:(NSString *)openId Completed:(void(^)(NSDictionary *responseDic, NSError *error))completedBlock;
 
 
 /**
