@@ -7,16 +7,19 @@
 #
 
 Pod::Spec.new do |s|
-    s.name = "HET_OpenSDK"
+    s.name = "HETOpenSDK"
     s.version = "2.0.0"
     s.summary = "H&T开放平台SDK"
     s.ios.deployment_target = '8.0'
     s.homepage     = "https://github.com/C-Life/HETOpenSDK-for-iOS"
     s.license      = 'Apache License, Version 2.0'
     s.author       = { "mr.cao" => "340395573@qq.com" }
-    s.source       = { :git => "https://github.com/C-Life/HETOpenSDK-for-iOS.git", :commit => "d7702cd75d33a4980af77164f20f824cf20ac714"}
+    s.source       = { :git => "https://github.com/C-Life/HETOpenSDK-for-iOS.git", :commit => "6081256dcb873a6c3bbc68dc7ddd96d635be8e45"}
     s.requires_arc = true
     s.vendored_frameworks='SDK/HETOpenSDK.framework'
     s.resource = 'SDK/HETOpenSDK.bundle'
+    s.library = 'z'
+    s.dependency 'SSZipArchive', '1.1'
+    s.dependency 'Masonry', '1.0.2'
 
 end
