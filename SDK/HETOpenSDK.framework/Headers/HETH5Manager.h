@@ -9,6 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @interface HETH5Manager : NSObject
+
+/**
+ *  请在程序启动时调用
+ *
+ *
+ */
++(void)launch;
+
+
 +(instancetype)shareInstance;
 
 /**
