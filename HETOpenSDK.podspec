@@ -20,6 +20,5 @@ Pod::Spec.new do |s|
     s.resource = 'SDK/HETOpenSDK.bundle'
     s.library = 'z'
     s.dependency 'SSZipArchive', '1.1'
-    s.dependency 'Masonry', '1.0.2'
 
 end
