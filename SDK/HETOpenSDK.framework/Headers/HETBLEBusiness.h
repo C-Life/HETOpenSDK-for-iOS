@@ -233,12 +233,14 @@ typedef NS_ENUM(NSInteger, HETBLETimeType) {
  
  @param peripheral         蓝牙对象
  @param mac                设备的mac地址
+ @param deviceId   设备的deviceId
  @param deviceVersionModel  设备版本信息
  @param progressBlock      升级的进度
  @param handler   升级的回调
  */
 -(void)mcuUpgrade:(CBPeripheral *)peripheral
        macAddress:(NSString *)mac
+         deviceId:(NSString *)deviceId
 deviceVersionModel:(HETDeviceVersionModel *)deviceVersionModel
          progress:(void (^)(float progress))progressBlock
 completionHandler:(void (^)(CBPeripheral *currentPeripheral,NSError *error))handler;
