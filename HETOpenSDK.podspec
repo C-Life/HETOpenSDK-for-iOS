@@ -8,17 +8,25 @@
 
 Pod::Spec.new do |s|
     s.name = "HETOpenSDK"
-    s.version = "2.0.0"
+    s.version = "2.0.1"
     s.summary = "H&T开放平台SDK"
     s.ios.deployment_target = '8.0'
     s.homepage     = "https://github.com/C-Life/HETOpenSDK-for-iOS"
     s.license      = 'Apache License, Version 2.0'
     s.author       = { "mr.cao" => "340395573@qq.com" }
-    s.source       = { :git => "https://github.com/C-Life/HETOpenSDK-for-iOS.git", :commit => "cf966f6cf60d2f1a4c7a281caac85c42284ab977"}
+    s.source       = { :git => "https://github.com/C-Life/HETOpenSDK-for-iOS.git", :commit => "82a05cdac32dc72db1d63f4f7436014950bb7b84"}
     s.requires_arc = true
     s.vendored_frameworks='SDK/HETOpenSDK.framework'
     s.resource = 'SDK/HETOpenSDK.bundle'
     s.library = 'z'
     s.dependency 'SSZipArchive', '1.1'
 
+
+   # HETMattressDeviceSDK 睡眠带子模块
+   s.subspec 'HETMattressDeviceSDK' do |sp|
+   sp.vendored_frameworks = 'Optional/HETMattressDeviceSDK.framework'
+   end
+
 end
+
+
