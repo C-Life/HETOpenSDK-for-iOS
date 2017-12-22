@@ -52,7 +52,7 @@ typedef NS_ENUM (NSInteger, HETAuthPlatformType) {
 
 
 /**
- *  网络环境配置,默认正式环境
+ *  网络环境配置,需要配置。默认没环境
  *
  *  @param  netWorkConfigType
  */

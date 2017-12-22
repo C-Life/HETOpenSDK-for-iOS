@@ -199,4 +199,7 @@ typedef void(^failureBlock)( NSError *error);
                                    success:(successBlock)success
                                    failure:(failureBlock)failure;
 
+//32位MD5加密方式
++(NSString *)getMd5_32Bit_String:(NSString *)srcString;
+
 @end
