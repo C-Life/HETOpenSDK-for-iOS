@@ -15,7 +15,12 @@ typedef NS_ENUM(NSInteger, HETBLETimeType) {
     HETBLEGMTTime      = 1,  //格林治时间
     HETBLECSTTime       = 2, //本地时间(如北京时间)
 };
+@protocol HETBLEScanDelegate<NSObject>
 
+//处理广播包数据，例如获取设备的mac地址
+-(void)advertisementData:(CBPeripheral*)peripheral advertiseDic:(NSDictionary*)dic RSSI:(NSNumber *)RSSI;
+
+@end
 @interface HETBLEBusiness : NSObject
 
 //当前蓝牙设备对象
@@ -31,6 +36,8 @@ typedef NS_ENUM(NSInteger, HETBLETimeType) {
 @property (assign, nonatomic)NSUInteger   connectRetryTimes;
 
 
+//蓝牙扫描的代理
+@property(nonatomic,weak)id<HETBLEScanDelegate>scanDelegate;
 
 /**
  

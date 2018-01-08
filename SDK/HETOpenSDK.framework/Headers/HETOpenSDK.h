@@ -38,7 +38,11 @@ typedef NS_ENUM (NSInteger, HETAuthPlatformType) {
     HETAuthPlatformType_QQ       = 2,    // QQ
 };
 
+@class HETAuthorizeTheme;
 @interface HETOpenSDK : NSObject
+@property (nonatomic, assign,readonly) HETNetWorkConfigType currentNetWorkConfigType;        // 当前的网络环境
+
++(instancetype)shareInstance;
 
 /**
  *  注册第三方应用
@@ -103,5 +107,30 @@ typedef NS_ENUM (NSInteger, HETAuthPlatformType) {
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation;
+
+/**
+ 设置授权主题
+
+ @param authorizeTheme 主题参数
+ */
++ (void)setAuthorizeTheme:(HETAuthorizeTheme *)authorizeTheme;
+
+@end
+
+// 授权主题
+@interface HETAuthorizeTheme : NSObject
+
+@property (nonatomic, strong) NSString *navHeadlineContent;         // 标题
+@property (nonatomic, assign) BOOL logoshow;                        // logo显示
+@property (nonatomic, assign) BOOL weixinLogin;                     // 微信登录显示
+@property (nonatomic, assign) BOOL qqLogin;                         // QQ登录显示
+@property (nonatomic, assign) BOOL weiboLogin;                      // 微博登录显示
+@property (nonatomic, strong) NSString *loginType;                  // 主题样式（1、2、3）
+@property (nonatomic, strong) NSString *navTitleColor;              // 导航标题文字颜色
+@property (nonatomic, strong) NSString *loginBtnFontColor;          // 登录按钮文字颜色
+@property (nonatomic, strong) NSString *navBackgroundColor;         // 导航颜色
+@property (nonatomic, strong) NSString *navBackBtnType;             // 返回按钮(white、black)
+@property (nonatomic, strong) NSString *loginBtnBackgroundColor;    // 登录按钮颜色
+@property (nonatomic, strong) NSString *loginBtnBorderColor;        // 登录边框颜色
 
 @end
