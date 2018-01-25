@@ -59,7 +59,7 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
  *  @param failure 失败的回调
  */
 + (void)fetchAllBindDeviceSuccess:(void (^)(NSArray<HETDevice *>* deviceArray))success
-                               failure:(failureBlock)failure;
+                          failure:(failureBlock)failure;
 
 
 
@@ -102,8 +102,8 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
  *  @param failure  解除绑定失败的回调
  */
 + (void)unbindDeviceWithDeviceId:(NSString *)deviceId
-                              success:(successBlock)success
-                              failure:(failureBlock)failure;
+                         success:(successBlock)success
+                         failure:(failureBlock)failure;
 
 
 
@@ -119,11 +119,26 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
 
 
 +(void)bindDeviceWithDeviceMAC:(NSString *)macAddr
-                      deviceProductId:(NSInteger) deviceProductId
+               deviceProductId:(NSInteger) deviceProductId
                       deviceId:(NSString *) deviceId
                        success:(successBlock)success
-                      failure:(failureBlock)failure;
+                       failure:(failureBlock)failure;
 
+
+/**
+ *  GPRS设备绑定
+ *
+ *  @param mac       MAC地址 (mac和imei必传一个）
+ *  @param deviceImei    GPRS设备IMEI号 (mac和imei必传一个）
+ *  @param productId     设备产品ID
+ *  @param success       绑定成功的回调
+ *  @param failure       绑定失败的回调
+ */
++ (void)bindGRPSDeviceWithMac:(NSString *)mac
+                   deviceImei:(NSString *)imei
+                    productId:(NSString *)productId
+                      success:(successBlock)success
+                      failure:(failureBlock)failure;
 
 /**
  *  根据productId获取产品的详细信息
@@ -133,8 +148,8 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
  *  @param failure  查询设备信息失败的回调
  */
 +(void)fetchDeviceInfoWithProductId:(NSString *)productId
-                                    success:(successBlock)success
-                                    failure:(failureBlock)failure;
+                            success:(successBlock)success
+                            failure:(failureBlock)failure;
 
 
 
@@ -355,3 +370,4 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
                                   BlockWithSuccess:(successBlock)success
                                            failure:(failureBlock)failure;
 @end
+
