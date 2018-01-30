@@ -40,4 +40,6 @@
 @property (nonatomic, strong) NSString *moduleName;//设备模组名字
 @property (nonatomic, strong) NSString *radiocastName;//设备广播名
 @property (nonatomic, strong) NSString *guideUrl;//引导页URL
+@property (nonatomic, strong) NSString *ssid;//设备AP热点名
+@property (nonatomic, strong) NSString *ssidPassword;//设备AP热点密码
 @end
