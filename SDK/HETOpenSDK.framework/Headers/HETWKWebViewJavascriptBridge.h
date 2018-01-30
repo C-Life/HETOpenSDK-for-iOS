@@ -47,16 +47,25 @@
 -(void)toast:(id)data;
 
 /**
- *  H5调用config接口后需要APP调用此方法，告知js准备好了(注意此方法调用之后，一般需要紧接着调用webViewConfigDataRepaint传配置数据给H5初始化界面)
+ *  相对网络请求
  *
- *  @param dic
+ *  @param url    请求地址。如用相对地址，必须“/” 开头（如：/v1/app/get）
+ *  @param data   发送数据。形式为：{"name": "张三", "age": 21, ...}
+ *  @param type   HTTP请求类型，如Get,Post请求
+ *  @param sucCallbackId   接口调用成功的回调函数
+ *  @param errCallbackId    接口调用失败的回调函数
+ *  @param needSign        接口是否需要签名（相对地址时有效),1代表需要签名，0代表不需要签名|
  */
 -(void)relProxyHttp:(id)url data:(id)data httpType:(id) type sucCallbackId:(id) sucCallbackId errCallbackId:(id) errCallbackId needSign:(id) needSign;
 
 /**
- *  H5调用config接口后需要APP调用此方法，告知js准备好了(注意此方法调用之后，一般需要紧接着调用webViewConfigDataRepaint传配置数据给H5初始化界面)
+ *  绝对网络请求
  *
- *  @param dic
+ *  @param url    请求地址。如用绝对地址（如：https://baidu.com/v1/app/get）
+ *  @param data   发送数据。形式为：{"name": "张三", "age": 21, ...}
+ *  @param type   HTTP请求类型，如Get,Post请求
+ *  @param sucCallbackId   接口调用成功的回调函数
+ *  @param errCallbackId    接口调用失败的回调函数
  */
 -(void)absProxyHttp:(id)url data:(id)data httpType:(id) type sucCallbackId:(id) sucCallbackId errCallbackId:(id) errCallbackId;
 
@@ -69,16 +78,23 @@
 -(void)onLoadH5Failed:(id)errCode errMsg:(id)errMsg;
 
 /**
- *  H5调用config接口后需要APP调用此方法，告知js准备好了(注意此方法调用之后，一般需要紧接着调用webViewConfigDataRepaint传配置数据给H5初始化界面)
+ *  h5传数据给native指h5传递相关数据给native端，比如设置页面标题，当前版本信息等
  *
- *  @param dic
+ *  @param routeUrl   路由方法名
+ *  @param data   数据内容
+ *  @param successCallbackId   接口调用成功的回调函数
+ *  @param failCallbackId    接口调用失败的回调函数
+
  */
 -(void)h5SendDataToNative:(id) routeUrl data:(id) data successCallbackId:(id)successCallbackId failedCallbackId:(id) failedCallbackId;
 
 /**
- *  H5调用config接口后需要APP调用此方法，告知js准备好了(注意此方法调用之后，一般需要紧接着调用webViewConfigDataRepaint传配置数据给H5初始化界面)
+ *  h5从native端获取数据，比如定位信息，蓝牙是否开启等
  *
- *  @param dic
+ *  @param routeUrl   路由方法名
+ *  @param successCallbackId   接口调用成功的回调函数
+ *  @param failCallbackId    接口调用失败的回调函数
+ 
  */
 -(void)h5GetDataFromNative:(id)routeUrl successCallbackId:(id)successCallbackId failedCallbackId:(id)failedCallbackId;
 
