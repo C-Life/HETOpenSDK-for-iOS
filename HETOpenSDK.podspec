@@ -16,11 +16,15 @@ Pod::Spec.new do |s|
     s.author       = { "mr.cao" => "340395573@qq.com" }
     s.source       = { :git => "https://github.com/C-Life/HETOpenSDK-for-iOS.git", :commit => "cb142bfb91b4c3f60f2dc3655fb03ee0d30488d9"}
     s.requires_arc = true
-    s.vendored_frameworks='SDK/HETOpenSDK.framework'
-    s.resource = 'SDK/HETOpenSDK.bundle'
-    s.library = 'z'
-    s.dependency 'SSZipArchive', '1.1'
+    s.default_subspecs = 'HETOpenSDK'
 
+    # 核心模块
+    s.subspec 'HETOpenSDK' do |sp|
+    sp.vendored_frameworks='SDK/HETOpenSDK.framework'
+    sp.resource = 'SDK/HETOpenSDK.bundle'
+    sp.library = 'z'
+    sp.dependency 'SSZipArchive', '1.1'
+    end
 
    # HETMattressDeviceSDK 睡眠带子模块
    s.subspec 'HETMattressDeviceSDK' do |sp|
