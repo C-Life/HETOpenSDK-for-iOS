@@ -30,6 +30,7 @@ typedef NS_ENUM(NSUInteger,HETNetWorkConfigType)
     HETNetWorkConfigType_ETE,//测试环境
     HETNetWorkConfigType_PRE,//预发布环境
     HETNetWorkConfigType_PE,//正式发布环境
+    HETNetWorkConfigType_EU,//欧洲发布环境
 };
 
 typedef NS_ENUM (NSInteger, HETAuthPlatformType) {
