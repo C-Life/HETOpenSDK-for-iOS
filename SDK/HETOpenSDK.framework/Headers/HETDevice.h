@@ -18,7 +18,8 @@
 @property (nonatomic, strong) NSString *deviceBrandName;//设备品牌名称
 @property (nonatomic, strong) NSString *deviceIcon;//设备图标
 @property (nonatomic, strong) NSString *deviceId;//设备标识
-@property (nonatomic, strong) NSString *deviceModel;
+@property (nonatomic, strong) NSString *deviceModel;//设备型号
+@property (nonatomic, strong) NSString *deviceCode;//设备编码
 @property (nonatomic, strong) NSString *deviceName;//设备名称
 @property (nonatomic, strong) NSNumber *deviceSubtypeId;//设备子分标识
 @property (nonatomic, strong) NSString *deviceSubtypeName;//设备子分类名称
@@ -31,7 +32,7 @@
 @property (nonatomic, strong) NSNumber *share;//设备分享（1-是，2-否，3-扫描分享）
 @property (nonatomic, strong) NSString *userKey;//MAC与设备ID生成的KEY
 @property (nonatomic, strong) NSNumber *productId;//设备型号标识
-@property (nonatomic, strong) NSNumber *moduleType;//模块类型（1-WiFi，2-蓝牙，3-音频，4-GSM，5-红外）
+@property (nonatomic, strong) NSNumber *moduleType;//模块类型（1-WiFi，2-蓝牙，3-音频，4-GSM，5-红外，6-直连，8-zigbee，9-ap模式）
 @property (nonatomic, strong) NSString *productIcon;//设备型号图标
 @property (nonatomic, strong) NSString *developerId;//客户代码
 @property (nonatomic, strong) NSString *productName;//产品名字
