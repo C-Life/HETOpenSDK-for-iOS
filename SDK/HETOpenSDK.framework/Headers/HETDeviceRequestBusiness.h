@@ -152,7 +152,16 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
                             failure:(failureBlock)failure;
 
 
-
+/**
+ *  根据deviceId获取设备的基本信息
+ *
+ *  @param deviceId 设备标识
+ *  @param success  查询设备信息成功的回调
+ *  @param failure  查询设备信息失败的回调
+ */
++(void)fetchDeviceInfoWithDeviceId:(NSString *)deviceId
+                            success:(successBlock)success
+                            failure:(failureBlock)failure;
 
 
 /**
@@ -335,7 +344,8 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
 
 
 /**
- *  普通网络请求
+ *  普通网络请求   “accessToken”  “timestamp”  “appId” 会自动添加
+ *
  *
  *  @param method     HTTP网络请求方法
  *  @param requestUrl 网络请求的URL

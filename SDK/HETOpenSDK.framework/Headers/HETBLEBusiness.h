@@ -35,6 +35,8 @@ typedef NS_ENUM(NSInteger, HETBLETimeType) {
 //蓝牙连接重试次数,默认不重试
 @property (assign, nonatomic)NSUInteger   connectRetryTimes;
 
+//蓝牙通信的超时时间,默认10s
+@property (nonatomic, assign)NSTimeInterval  communicationTimeOut;
 
 //蓝牙扫描的代理
 @property(nonatomic,weak)id<HETBLEScanDelegate>scanDelegate;

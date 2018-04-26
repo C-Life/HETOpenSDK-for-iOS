@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, HETWiFiDeviceState) {
 
 
 @interface HETDeviceControlBusiness : NSObject
-@property (nonatomic,readonly ) NSDictionary    *deviceCfgData;
+@property (nonatomic,readonly ) NSDictionary    *deviceCfgData;//设备的控制数据
 
 
 /**
@@ -24,7 +24,7 @@ typedef NS_ENUM(NSInteger, HETWiFiDeviceState) {
  *
  *  @param device                设备的对象
  *  @param runDataBlock          设备运行数据block回调
- *  @param cfgDataBlock          设备配置数据block回调
+ *  @param cfgDataBlock          设备控制数据block回调
  *  @param errorDataBlock        设备故障数据block回调
  *  @param stateBlock            设备在线状态block回调
  *  @param failureBlock          获取设备数据失败block回调

@@ -34,7 +34,7 @@ extern const NSInteger kHETBLERecvDataAnalyErrorCode;
 extern const NSInteger kHETBLERecvPacketDataErrorCode;
 extern const NSInteger kHETBLEMCUVersionErrorCode;
 extern const NSInteger kHETBLEMCUUpdateFileErrorCode;
-
+extern const NSInteger kHETBLEMCUBinDataErrorCode;
 extern NSString * const kHETBLEBoardNameErrorCodeErrorMessage;//  @"未扫到指定的蓝牙广播";
 extern NSString * const kHETBLEConnectErrorCodeErrorMessage ;//  @"扫到但是无法连接上";
 extern NSString * const kHETBLEDisConnectErrorCodeErrorMessage ;//  @"蓝牙断开了";
@@ -53,3 +53,4 @@ extern NSString * const kHETBLERecvDataAnalyErrorCodeErrorMessage;//  @"蓝牙�
 extern NSString * const kHETBLERecvPacketDataErrorCodeErrorMessage;//  @"蓝牙收到的数据包异常";
 extern NSString * const kHETBLEMCUVersionErrorCodeErrorMessage;//  @"蓝牙MCU版本格式不对，定义为V0.0.1类似";
 extern NSString * const kHETBLEMCUUpdateFileErrorCodeErrorMessage;//  @"蓝牙MCU升级的bin文件路径为空";
+extern NSString * const kHETBLEMCUBinDataErrorCodeErrorMessage;// @"蓝牙MCU升级的bin文件内容为空";

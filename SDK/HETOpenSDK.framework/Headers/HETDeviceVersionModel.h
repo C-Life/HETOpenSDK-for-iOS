@@ -17,7 +17,10 @@
 @property (nonatomic, strong) NSNumber *deviceBleFirmId;//蓝牙固件id
 
 @property (nonatomic, strong) NSString *filePath; //升级的bin文件路径
+@property (nonatomic, copy) NSString *pcbFilePath;
 @property (nonatomic, strong) NSString *releaseNote;//修改内容
+
+@property (nonatomic, assign) NSInteger status;//状态（1-普通，2-强制）
 
 
 
