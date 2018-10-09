@@ -19,7 +19,17 @@ typedef NS_ENUM(NSInteger , HETRequestMethod) {
     HETRequestMethodPatch
 };
 
+typedef NS_ENUM(NSInteger, HETWiFiDeviceState) {
+    HETWiFiDeviceOnState      = 1,  //设备在线状态
+    HETWiFiDeviceOffState    //设备离线状态
+};
 
+typedef void(^HETSuccessBlock)(id responseObject);
+typedef void(^HETFailureBlock)(NSError *error);
+typedef void(^HETDeviceRunDataBlock)(id responseObject);
+typedef void(^HETDeviceConfigDataBlock)(id responseObject);
+typedef void(^HETDeviceErrorDataBlock)(id responseObject);
+typedef void(^HETWifiDeviceStateBlock)(HETWiFiDeviceState state);
 
 
 

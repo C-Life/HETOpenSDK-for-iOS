@@ -105,7 +105,7 @@ typedef NS_ENUM(NSInteger, HETBLETimeType) {
 
 
 /**
- 绑定蓝牙设备
+ 绑定蓝牙设备,不会带有一条发送绑定指令的通信
  
  @param peripheral 蓝牙对象(peripheral与mac至少需要一个不为空)
  @param mac        设备的mac地址
@@ -116,6 +116,16 @@ typedef NS_ENUM(NSInteger, HETBLETimeType) {
                  completionHandler:(void (^)(NSString *deviceId, NSError *error))handler;
 
 
+/**
+ 绑定蓝牙设备,会带有一条发送绑定指令的通信
+ 
+ @param peripheral 蓝牙对象(peripheral与mac至少需要一个不为空)
+ @param mac        设备的mac地址
+ @param handler    绑定结果的回调函数
+ */
+-(void)fetchBindDataWithPeripheral:(CBPeripheral*)peripheral
+                        macAddress:(NSString *)mac
+                 completionHandler:(void (^)(NSString *deviceId,NSData *data, NSError *error))handler;
 /**
  设备控制
  

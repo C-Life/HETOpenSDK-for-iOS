@@ -10,9 +10,7 @@
 #import "HETNetWorkRequestHeader.h"
 #import "HETFileInfo.h"
 #import "HETDevice.h"
-
-typedef void(^successBlock)(id responseObject);
-typedef void(^failureBlock)( NSError *error);
+#import "HETNetWorkRequestHeader.h"
 
 typedef NS_ENUM(NSUInteger,HETDeviceBindType)
 {
@@ -30,9 +28,6 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
     HETBLEDeviceStatusDataUploadType=5,//蓝牙设备状态数据上传类型
 };
 
-
-
-
 @interface HETDeviceRequestBusiness : NSObject
 
 /**
@@ -45,12 +40,25 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
  */
 + (void)deviceControlWithJSON:(NSString *)json
                  withDeviceId:(NSString *)deviceId
-                      success:(successBlock)success
-                      failure:(failureBlock)failure;
+                      success:(HETSuccessBlock)success
+                      failure:(HETFailureBlock)failure;
 
 
 
-
+/**
+ *  下发控制设备，新接口
+ *
+ *  @param json     设备控制json
+ *  @param deviceId 设备deviceId
+ *  @param isOfflineSend 是否离线下发标识（0：是； 1：否。默认1），NBIOT设备需要离线下发
+ *  @param success  设备控制成功的回调
+ *  @param failure  设备控制失败的回调
+ */
++ (void)deviceControlWithJSON:(NSString *)json
+                 withDeviceId:(NSString *)deviceId
+            withIsOfflineSend:(NSNumber *)isOfflineSend
+                      success:(HETSuccessBlock)success
+                      failure:(HETFailureBlock)failure;
 
 /**
  *  查询绑定的所有设备列表
@@ -59,7 +67,7 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
  *  @param failure 失败的回调
  */
 + (void)fetchAllBindDeviceSuccess:(void (^)(NSArray<HETDevice *>* deviceArray))success
-                          failure:(failureBlock)failure;
+                          failure:(HETFailureBlock)failure;
 
 
 
@@ -71,8 +79,8 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
  */
 
 
-+ (void)fetchDeviceTypeListSuccess:(successBlock)success
-                           failure:(failureBlock)failure;
++ (void)fetchDeviceTypeListSuccess:(HETSuccessBlock)success
+                           failure:(HETFailureBlock)failure;
 
 
 
@@ -87,8 +95,8 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
  */
 
 + (void)fetchDeviceProductListWithDeviceTypeId:(NSString *)deviceTypeId
-                                       success:(successBlock)success
-                                       failure:(failureBlock)failure;
+                                       success:(HETSuccessBlock)success
+                                       failure:(HETFailureBlock)failure;
 
 
 
@@ -102,8 +110,8 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
  *  @param failure  解除绑定失败的回调
  */
 + (void)unbindDeviceWithDeviceId:(NSString *)deviceId
-                         success:(successBlock)success
-                         failure:(failureBlock)failure;
+                         success:(HETSuccessBlock)success
+                         failure:(HETFailureBlock)failure;
 
 
 
@@ -121,15 +129,15 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
 +(void)bindDeviceWithDeviceMAC:(NSString *)macAddr
                deviceProductId:(NSInteger) deviceProductId
                       deviceId:(NSString *) deviceId
-                       success:(successBlock)success
-                       failure:(failureBlock)failure;
+                       success:(HETSuccessBlock)success
+                       failure:(HETFailureBlock)failure;
 
 
 /**
  *  GPRS设备绑定
  *
  *  @param mac       MAC地址 (mac和imei必传一个）
- *  @param deviceImei    GPRS设备IMEI号 (mac和imei必传一个）
+ *  @param imei    GPRS设备IMEI号 (mac和imei必传一个）
  *  @param productId     设备产品ID
  *  @param success       绑定成功的回调
  *  @param failure       绑定失败的回调
@@ -137,8 +145,8 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
 + (void)bindGRPSDeviceWithMac:(NSString *)mac
                    deviceImei:(NSString *)imei
                     productId:(NSString *)productId
-                      success:(successBlock)success
-                      failure:(failureBlock)failure;
+                      success:(HETSuccessBlock)success
+                      failure:(HETFailureBlock)failure;
 
 /**
  *  根据productId获取产品的详细信息
@@ -148,8 +156,8 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
  *  @param failure  查询设备信息失败的回调
  */
 +(void)fetchDeviceInfoWithProductId:(NSString *)productId
-                            success:(successBlock)success
-                            failure:(failureBlock)failure;
+                            success:(HETSuccessBlock)success
+                            failure:(HETFailureBlock)failure;
 
 
 /**
@@ -160,8 +168,8 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
  *  @param failure  查询设备信息失败的回调
  */
 +(void)fetchDeviceInfoWithDeviceId:(NSString *)deviceId
-                            success:(successBlock)success
-                            failure:(failureBlock)failure;
+                            success:(HETSuccessBlock)success
+                            failure:(HETFailureBlock)failure;
 
 
 /**
@@ -170,15 +178,22 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
  *  @param deviceId 设备deviceId
  *  @param dataType 数据类型
  *  @param data     需要上传的数据
+ *  @param jsonStr  根据协议解析的json数据
  *  @param success  上传成功的回调
  *  @param failure  上传失败的回调
  */
+//+ (void)uploadDeviceDataWithDeviceId:(NSString *)deviceId
+//                            dataType:(HETBLEDeviceDataUploadType) dataType
+//                                data:(NSData *)data
+//                             success:(HETSuccessBlock)success
+//                             failure:(HETFailureBlock)failure;
+
 + (void)uploadDeviceDataWithDeviceId:(NSString *)deviceId
                             dataType:(HETBLEDeviceDataUploadType) dataType
                                 data:(NSData *)data
-                             success:(successBlock)success
-                             failure:(failureBlock)failure;
-
+                                json:(NSString *)jsonStr
+                             success:(HETSuccessBlock)success
+                             failure:(HETFailureBlock)failure;
 /**
  *  设备数据上传（蓝牙）
  *
@@ -191,8 +206,8 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
 + (void)uploadDeviceJsonDataWithDeviceId:(NSString *)deviceId
                                 dataType:(HETBLEDeviceDataUploadType) dataType
                                     data:(NSString *)jsonStr
-                                 success:(successBlock)success
-                                 failure:(failureBlock)failure;
+                                 success:(HETSuccessBlock)success
+                                 failure:(HETFailureBlock)failure;
 
 
 /**
@@ -209,8 +224,8 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
                           withOrder:(NSUInteger)order
                        withPageRows:(NSUInteger)pageRows
                       withPageIndex:(NSUInteger)pageIndex
-                            success:(successBlock)success
-                            failure:(failureBlock)failure;
+                            success:(HETSuccessBlock)success
+                            failure:(HETFailureBlock)failure;
 
 
 
@@ -229,8 +244,8 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
 + (void)updateDeviceInfoWithDeviceId:(NSString *)deviceId
                           deviceName:(NSString *)deviceName
                               roomId:(NSString *)roomId
-                             success:(successBlock)success
-                             failure:(failureBlock)failure;
+                             success:(HETSuccessBlock)success
+                             failure:(HETFailureBlock)failure;
 
 
 
@@ -252,8 +267,8 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
                                    endDate:(NSString *)endDate
                                   pageRows:(NSString *)pageRows
                                  pageIndex:(NSString *)pageIndex
-                                   success:(successBlock)success
-                                   failure:(failureBlock)failure;
+                                   success:(HETSuccessBlock)success
+                                   failure:(HETFailureBlock)failure;
 
 
 
@@ -273,8 +288,8 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
                                       endDate:(NSString *)endDate
                                      pageRows:(NSString *)pageRows
                                     pageIndex:(NSString *)pageIndex
-                                      success:(successBlock)success
-                                      failure:(failureBlock)failure;
+                                      success:(HETSuccessBlock)success
+                                      failure:(HETFailureBlock)failure;
 
 
 
@@ -294,8 +309,8 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
                                      endDate:(NSString *)endDate
                                     pageRows:(NSString *)pageRows
                                    pageIndex:(NSString *)pageIndex
-                                     success:(successBlock)success
-                                     failure:(failureBlock)failure;
+                                     success:(HETSuccessBlock)success
+                                     failure:(HETFailureBlock)failure;
 
 
 /**
@@ -314,8 +329,8 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
                                       endDate:(NSString *)endDate
                                      pageRows:(NSString *)pageRows
                                     pageIndex:(NSString *)pageIndex
-                                      success:(successBlock)success
-                                      failure:(failureBlock)failure;
+                                      success:(HETSuccessBlock)success
+                                      failure:(HETFailureBlock)failure;
 
 
 
@@ -335,8 +350,8 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
                       withOrder:(NSUInteger)order
                    withPageRows:(NSUInteger)pageRows
                   withPageIndex:(NSUInteger)pageIndex
-                        success:(successBlock)success
-                        failure:(failureBlock)failure;
+                        success:(HETSuccessBlock)success
+                        failure:(HETFailureBlock)failure;
 
 
 
@@ -358,8 +373,8 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
                    withRequestUrl:(NSString *)requestUrl
                     processParams:(NSDictionary *)params
                          needSign:(BOOL)needSign
-                 BlockWithSuccess:(successBlock)success
-                          failure:(failureBlock)failure;
+                 BlockWithSuccess:(HETSuccessBlock)success
+                          failure:(HETFailureBlock)failure;
 
 
 
@@ -377,7 +392,7 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
 +(void)startMultipartFormDataRequestWithRequestUrl:(NSString *)requestUrl
                                      processParams:(NSDictionary *)params
                                     uploadFileInfo:(NSArray<HETFileInfo *>*)fileInfoArray
-                                  BlockWithSuccess:(successBlock)success
-                                           failure:(failureBlock)failure;
+                                  BlockWithSuccess:(HETSuccessBlock)success
+                                           failure:(HETFailureBlock)failure;
 @end
 

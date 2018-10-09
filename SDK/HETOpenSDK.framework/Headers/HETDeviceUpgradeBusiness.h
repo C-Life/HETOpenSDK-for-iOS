@@ -8,11 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HETDeviceVersionModel.h"
-typedef void(^successBlock)(id responseObject);
-typedef void(^failureBlock)( NSError *error);
-
-
-
+#import "HETNetWorkRequestHeader.h"
 
 @interface HETDeviceUpgradeBusiness : NSObject
 
@@ -27,7 +23,7 @@ typedef void(^failureBlock)( NSError *error);
 
 +(void)deviceUpgradeCheckWithDeviceId:(NSString *)deviceId
                               success:(void (^)(HETDeviceVersionModel * deviceVersionModel))success
-                              failure:(failureBlock)failure;
+                              failure:(HETFailureBlock)failure;
 
 
 
@@ -48,8 +44,8 @@ typedef void(^failureBlock)( NSError *error);
 +(void)deviceUpgradeConfirmWithDeviceId:(NSString *)deviceId
                       deviceVersionType:(NSString *)deviceVersionType
                         deviceVersionModel:(HETDeviceVersionModel *) deviceVersionModel
-                              success:(successBlock)success
-                              failure:(failureBlock)failure;
+                              success:(HETSuccessBlock)success
+                              failure:(HETFailureBlock)failure;
 
 
 
@@ -76,8 +72,8 @@ typedef void(^failureBlock)( NSError *error);
 
 +(void)fetchDeviceUpgradeProgress:(NSString *)deviceId
                         deviceVersionModel:(HETDeviceVersionModel *)deviceVersionModel
-                                success:(successBlock)success
-                                failure:(failureBlock)failure;
+                                success:(HETSuccessBlock)success
+                                failure:(HETFailureBlock)failure;
 
 
 
@@ -93,7 +89,7 @@ typedef void(^failureBlock)( NSError *error);
 
 +(void)deviceUpgradeConfirmSuccessWithDeviceId:(NSString *)deviceId
                         deviceVersionModel:(HETDeviceVersionModel *) deviceVersionModel
-                                       success:(successBlock)success
-                                       failure:(failureBlock)failure;
+                                       success:(HETSuccessBlock)success
+                                       failure:(HETFailureBlock)failure;
 
 @end

@@ -23,6 +23,8 @@
 #import "HETDownloadRequestOperation.h"
 #import "HETWKWebViewJavascriptBridge.h"
 #import "HETH5Manager.h"
+
+
 extern  NSString * const HETLoginOffNotification;//账号异地登录
 typedef NS_ENUM(NSUInteger,HETNetWorkConfigType)
 {
@@ -71,11 +73,11 @@ typedef NS_ENUM (NSInteger, HETAuthPlatformType) {
 + (void)openLog:(BOOL)open;
 
 /*************************************************************************************************
-                            ↓↓↓↓↓         第三方授权相关          ↓↓↓↓↓
+ ↓↓↓↓↓         第三方授权相关          ↓↓↓↓↓
  *************************************************************************************************/
 /**
  设置第三方平台相关参数
-
+ 
  @param plaformType 第三方平台来源
  @param appKey      第三方appKey
  @param appSecret   第三方appSecret
@@ -88,7 +90,7 @@ typedef NS_ENUM (NSInteger, HETAuthPlatformType) {
 
 /**
  获得从sso或者web端回调到本app的回调
-
+ 
  @param url 第三方sdk的打开本app的回调的url
  @return 是否处理  YES代表处理成功，NO代表不处理
  */
@@ -97,7 +99,7 @@ typedef NS_ENUM (NSInteger, HETAuthPlatformType) {
 
 /**
  获得从sso或者web端回调到本app的回调
-
+ 
  @param application         application
  @param url                 第三方sdk的打开本app的回调的url
  @param sourceApplication   回调来源程序
@@ -111,7 +113,7 @@ typedef NS_ENUM (NSInteger, HETAuthPlatformType) {
 
 /**
  设置授权主题
-
+ 
  @param authorizeTheme 主题参数
  */
 + (void)setAuthorizeTheme:(HETAuthorizeTheme *)authorizeTheme;

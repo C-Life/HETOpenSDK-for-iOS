@@ -195,6 +195,16 @@
  */
 -(void) setNavigationBarTitle:(id )title  frontColor:(id) frontColor  backgroundColor:(id) backgroundColor  image:(id) image  successCallbackId:(id) successCallbackId  failCallbackId:(id) failCallbackId  completeCallbackId:(id) completeCallbackId;
 
+/**
+ *  H5设置APP导航栏左右按钮的样式颜色，右边按钮的隐藏
+ 
+ *  @param colorStyle 设置导航栏左右按钮的样式颜色，APP默认支持黑白两套图片，0代表白色样式，1代表黑色样式
+ *  @param rightButtonHide 导航栏右边按钮是否隐藏，0代表不隐藏，1代表隐藏
+ *  @param successCallbackId  接口调用成功的回调函数
+ *  @param failCallbackId     接口调用失败的回调函数
+ *  @param completeCallbackId 接口调用结束的回调函数（调用成功、失败都会执行）
+ */
+-(void)setNavigationBarButtonWithColorStyle:(id)colorStyle rightButtonHide:(id)rightButtonHide successCallbackId:(id)successCallbackId failCallbackId:(id)failCallbackId completeCallbackId:(id)completeCallbackId;
 
 /**
  *  设置导航栏左边按钮
@@ -325,8 +335,17 @@
  */
 -(void)showShareActionSheetWithTitle:(id )title content:(id) content images:(id) images  url:(id)url  successCallbackId:(id)successCallbackId  failCallbackId:(id)failCallbackId  completeCallbackId:(id) completeCallbackId;
 
-
-
+/**
+ *  H5获取APP当前的地理位置信息接口
+ *
+ *  @param type    默认为 wgs84 返回 GPS 坐标；gcj02 返回国测局坐标
+ *  @param altitude    传入 true 会返回高度信息，由于获取高度需要较高精确度，会减慢接口返回速度
+ *  @param successCallbackId   接口调用成功的回调函数
+ *  @param failCallbackId    接口调用失败的回调函数
+ *  @param completeCallbackId    接口调用结束的回调函数（调用成功、失败)
+ 
+ */
+-(void)userLocationWithType:(id)type altitude:(id)altitude successCallbackId:(id)successCallbackId  failCallbackId:(id)failCallbackId  completeCallbackId:(id) completeCallbackId;
 @end
 
 
@@ -841,5 +860,25 @@
  */
 -(void)webViewGetDeviceMcuUpgradeResponse:(NSDictionary *)dic  callBackId:(id)callBackId;
 
+
+/**
+ *  APP将当前地理位置上传给js
+ *
+ *
+ *  @param dic       dic示例 data:{
+ latitude:0, //string 纬度，浮点数，范围为-90~90，负数表示南纬
+ longitude:0, //string 经度，浮点数，范围为-180~180，负数表示西经
+ speed:0, //string 速度，浮点数，单位m/s
+ accuracy:0, //string 位置的精确度
+ altitude:0, //string 高度，单位 m
+ verticalAccuracy:0, //string 垂直精度，单位 m（Android 无法获取，返回 0）
+ horizontalAccuracy:0, //string 水平精度，单位 m
+ address:'中国广东省深圳市南山区科技南十路',//详细地址
+ name:'科技南十路'//位置名称
+ cityName:'深圳市‘//城市名
+ }
+ *  @param callBackId  需与userLocation接口返回的callBackId保持一致
+ */
+-(void)webViewUserLocationResponse:(NSDictionary *)dic  callBackId:(id)callBackId;
 
 @end
