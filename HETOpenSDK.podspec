@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
     sp.vendored_frameworks='SDK/HETOpenSDK.framework'
     sp.resource = 'SDK/HETOpenSDK.bundle'
     sp.library = 'z'
-    sp.dependency 'SSZipArchive', '1.1'
+    sp.dependency 'SSZipArchive','2.1.2'
     end
 
    # HETMattressDeviceSDK 睡眠带子模块

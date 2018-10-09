@@ -9,13 +9,9 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 
-//#define ktestAPPID @"30048"
-//#define ktestAPPSECRET @"9e0ab42cc3b54fca8c56affa6be059cf"
-/**
- *  和而泰美容独立app注册ID和密钥
- */
-NSString *const ktestAPPID =@"30765";//@"10101";//@"30048";// ;
-NSString *const ktestAPPSECRET =@"5f699a78c319444cb8a291296049572c";//@"afd55f877bad4aaeab45fb4ca567d234";//@"9e0ab42cc3b54fca8c56affa6be059cf";// @"afd55f877bad4aaeab45fb4ca567d234";
+
+NSString *const ktestAPPID =@"30765";
+NSString *const ktestAPPSECRET =@"5f699a78c319444cb8a291296049572c";
 
 @interface AppDelegate ()
 @end

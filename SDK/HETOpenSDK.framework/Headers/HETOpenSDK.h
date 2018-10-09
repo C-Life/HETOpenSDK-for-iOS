@@ -23,7 +23,7 @@
 #import "HETDownloadRequestOperation.h"
 #import "HETWKWebViewJavascriptBridge.h"
 #import "HETH5Manager.h"
-
+#import "HETReachability.h"
 
 extern  NSString * const HETLoginOffNotification;//账号异地登录
 typedef NS_ENUM(NSUInteger,HETNetWorkConfigType)

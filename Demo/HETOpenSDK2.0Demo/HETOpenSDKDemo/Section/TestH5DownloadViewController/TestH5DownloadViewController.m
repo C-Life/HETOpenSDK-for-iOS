@@ -75,9 +75,9 @@
 -(void)config:(id)data
 {
     [_bridge webViewReady:nil];
-    if(self.communicationManager.deviceCfgData)
+    if(self.communicationManager.deviceDefaultCfgData)
     {
-     [_bridge webViewConfigDataRepaint:self.communicationManager.deviceCfgData];
+     [_bridge webViewConfigDataRepaint:self.communicationManager.deviceDefaultCfgData];
     }
 }
 

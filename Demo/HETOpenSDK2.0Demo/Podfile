@@ -9,8 +9,8 @@ target :'HETOpenSDKDemo' do
     pod 'TencentOpenApiSDK', '2.9.5'
     pod  'Masonry' ,'1.1.0'
     #pod  'SSZipArchive','1.1'
-    pod 'HETOpenSDK','2.0.1'
-    pod 'HETOpenSDK/HETMattressDeviceSDK','2.0.1'
+    pod 'HETOpenSDK','2.0.9'
+    pod 'HETOpenSDK/HETMattressDeviceSDK'
 end
 
 

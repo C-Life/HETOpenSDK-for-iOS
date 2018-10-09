@@ -354,15 +354,25 @@
     {
         TestH5DownloadViewController*h5vc = [[TestH5DownloadViewController alloc]init];
         h5vc.deviceModel=deviceModel;
-        [[HETH5Manager shareInstance]getH5Path:^(NSString *h5Path, BOOL needRefresh,NSError *error) {
+        [[HETH5Manager shareInstance]getH5Path:^(NSString *h5Path, BOOL needRefresh, NSString *h5ConfigLibVersion, NSError *error) {
             NSLog(@"%@..%@",h5Path,@(needRefresh));
             NSLog(@"h5PagePath--->:%@",h5Path);
             NSString *desPath  = [NSString stringWithFormat:@"%@/index.html",h5Path];
             h5vc.h5Path = desPath;
             [h5vc.wkWebView reload];
             [self.navigationController pushViewController:h5vc animated:YES];
+        } downloadProgressBlock:^(NSProgress *progress) {
             
         } productId:[NSString stringWithFormat:@"%@", deviceModel.productId]];
+//        [[HETH5Manager shareInstance]getH5Path:^(NSString *h5Path, BOOL needRefresh,NSError *error) {
+//            NSLog(@"%@..%@",h5Path,@(needRefresh));
+//            NSLog(@"h5PagePath--->:%@",h5Path);
+//            NSString *desPath  = [NSString stringWithFormat:@"%@/index.html",h5Path];
+//            h5vc.h5Path = desPath;
+//            [h5vc.wkWebView reload];
+//            [self.navigationController pushViewController:h5vc animated:YES];
+//
+//        } productId:[NSString stringWithFormat:@"%@", deviceModel.productId]];
     }
     else if (deviceBindType.integerValue==2)
     {
