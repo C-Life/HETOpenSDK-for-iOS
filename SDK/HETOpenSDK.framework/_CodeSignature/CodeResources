@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/HETDeviceControlBusiness.h</key>
 		<data>
-		C4lrIDUWe4aei1hkphY2gKp/v1s=
+		Hfozi4DHGL0EbPed5+sc4EuLZiE=
 		</data>
 		<key>Headers/HETDeviceRequestBusiness.h</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Headers/HETOpenSDK.h</key>
 		<data>
-		/IjMQqqrNmXiGaTrIn/Jyg/bLgo=
+		dlRtPyxvmODM/t6GVAxwo+sVLGU=
 		</data>
 		<key>Headers/HETPeripheral.h</key>
 		<data>
@@ -90,7 +90,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		3hD/er7ExaCYntIihziOkA/Ncz8=
+		BJGUU6DS9a+Y+cqZOKHybtLI9Bc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -169,11 +169,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			C4lrIDUWe4aei1hkphY2gKp/v1s=
+			Hfozi4DHGL0EbPed5+sc4EuLZiE=
 			</data>
 			<key>hash2</key>
 			<data>
-			pzXosz4qlOFsDHMYoRcm/1gQ29nR9UfbhTmtGNAKb5w=
+			Iqd4tTQ0Er6sVmLPVKSU1+WQYftbvZPfOH6eQdMP71Y=
 			</data>
 		</dict>
 		<key>Headers/HETDeviceRequestBusiness.h</key>
@@ -268,11 +268,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/IjMQqqrNmXiGaTrIn/Jyg/bLgo=
+			dlRtPyxvmODM/t6GVAxwo+sVLGU=
 			</data>
 			<key>hash2</key>
 			<data>
-			Mk7lRiNO6T6Ywd088WJu3ftp3XC+7snvYMVy8khcVUc=
+			Jc87InoC94gu6Z5TFciueHjECVQq42XO4eIeIKKH/wg=
 			</data>
 		</dict>
 		<key>Headers/HETPeripheral.h</key>

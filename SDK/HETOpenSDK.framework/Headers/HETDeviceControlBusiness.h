@@ -11,6 +11,8 @@
 
 @interface HETDeviceControlBusiness : NSObject
 
+//当前是否小循环
+@property (nonatomic,readonly ) BOOL        isLittleLoop;
 ///是否需要回复,针对F241老协议的
 @property (nonatomic,assign) BOOL needReplay;
 ///设置小循环数据发送最大次数，默认发送10次

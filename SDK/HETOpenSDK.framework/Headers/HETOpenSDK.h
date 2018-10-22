@@ -44,7 +44,7 @@ typedef NS_ENUM (NSInteger, HETAuthPlatformType) {
 @class HETAuthorizeTheme;
 @interface HETOpenSDK : NSObject
 @property (nonatomic, assign,readonly) HETNetWorkConfigType currentNetWorkConfigType;        // 当前的网络环境
-
+@property (nonatomic,strong)NSString *openId;
 +(instancetype)shareInstance;
 
 /**
