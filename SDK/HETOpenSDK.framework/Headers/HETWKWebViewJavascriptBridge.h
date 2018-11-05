@@ -788,7 +788,26 @@
 
 -(void)webViewGetBLEHistoryDataResponse:(NSDictionary *)data  callBackId:(id)callBackId;
 
+/**
+ *  APP传递蓝牙适配器状态给H5
+ *
+ *
+ *  @param adapterState  adapterState 蓝牙开关状态，0是关闭，1是打开状态
+ *  @param callBackId  对应onBluetoothAdapterStateChange函数参数的callbackId,如successCallbackId,failCallbackId,completeCallbackId
+ */
 
+-(void)webViewOnBluetoothAdapterStateChangeResponse:(NSString *)adapterState  callBackId:(id)callBackId;
+
+
+/**
+ *  APP传递蓝牙适配器状态给H5
+ *
+ *
+ *  @param adapterState  adapterState 蓝牙开关状态，0是关闭，1是打开状态
+ *  @param callBackId  对应getBluetoothAdapterState函数参数的callbackId,如successCallbackId,failCallbackId,completeCallbackId
+ */
+
+-(void)webViewGetBluetoothAdapterStateResponse:(NSString *)adapterState  callBackId:(id)callBackId;
 
 
 /**
