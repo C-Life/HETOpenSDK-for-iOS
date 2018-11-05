@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/HETBLEBusiness.h</key>
 		<data>
-		x3Pk1RWAZLvJFcu3HFEbc8sUEWc=
+		q5htmwspOHX6cPJCe+2j5kp0GtI=
 		</data>
 		<key>Headers/HETBLEError.h</key>
 		<data>
@@ -51,6 +51,10 @@
 		<key>Headers/HETDownloadRequestOperation.h</key>
 		<data>
 		q1uY778z3Bz7obWSILKhVplr468=
+		</data>
+		<key>Headers/HETEncodeAndDecodeData.h</key>
+		<data>
+		TynM63YiQ4jf8HwMe98JocLbg+M=
 		</data>
 		<key>Headers/HETFileInfo.h</key>
 		<data>
@@ -86,11 +90,11 @@
 		</data>
 		<key>Headers/HETWKWebViewJavascriptBridge.h</key>
 		<data>
-		AEshJd+tAzAfCw3CSXjTrrra81I=
+		aR47WFfRNe3Cj0hKegy0Kx3EoC0=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		BJGUU6DS9a+Y+cqZOKHybtLI9Bc=
+		mBxBa22wM8x27od0B6WGhwtvfaE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -136,11 +140,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			x3Pk1RWAZLvJFcu3HFEbc8sUEWc=
+			q5htmwspOHX6cPJCe+2j5kp0GtI=
 			</data>
 			<key>hash2</key>
 			<data>
-			AwhbquUlRCD1/ahgNzBcjsL5bhRA1RTMXNZwJPfj8ro=
+			AY6ETlLfL37bq5gFmJbV8PGTiAUUfaBFJNs/j/n5j4U=
 			</data>
 		</dict>
 		<key>Headers/HETBLEError.h</key>
@@ -229,6 +233,17 @@
 			<key>hash2</key>
 			<data>
 			QvTsE4MzZcD/Sw9kbUWH0iGWzEl4pXGC8sTjFcD26XI=
+			</data>
+		</dict>
+		<key>Headers/HETEncodeAndDecodeData.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TynM63YiQ4jf8HwMe98JocLbg+M=
+			</data>
+			<key>hash2</key>
+			<data>
+			9Mum/HEGUpkKjHbK5/gw9juoOuyZogMYLKWzhAEXIBg=
 			</data>
 		</dict>
 		<key>Headers/HETFileInfo.h</key>
@@ -323,11 +338,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			AEshJd+tAzAfCw3CSXjTrrra81I=
+			aR47WFfRNe3Cj0hKegy0Kx3EoC0=
 			</data>
 			<key>hash2</key>
 			<data>
-			fJXy3PLKMmdfBQST6ji014RxPhbXkGbWdrQYGrGKflA=
+			pQXcJZArKUXBkApk/zFgW5dkmCGssYJdnHH0hEkbt3k=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

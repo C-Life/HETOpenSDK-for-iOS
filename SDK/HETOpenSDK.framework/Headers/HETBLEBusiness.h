@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "HETPeripheral.h"
 #import "HETDeviceVersionModel.h"
-
+#import "HETEncodeAndDecodeData.h"
 
 typedef NS_ENUM(NSInteger, HETBLETimeType) {
     HETBLEGMTTime      = 1,  //格林治时间
@@ -41,6 +41,8 @@ typedef NS_ENUM(NSInteger, HETBLETimeType) {
 //蓝牙扫描的代理
 @property(nonatomic,weak)id<HETBLEScanDelegate>scanDelegate;
 
+//协议解析类
+@property (nonatomic, strong)HETEncodeAndDecodeData *parseDataObj;
 /**
  
  
@@ -59,13 +61,12 @@ typedef NS_ENUM(NSInteger, HETBLETimeType) {
 /**
  获取当前手机蓝牙状态
  */
--(CBManagerState)currentStateOfCBCentermanager;
-
+-(CBCentralManagerState)currentStateOfCBCentermanager;
 
 /**
  监听手机蓝牙状态
  */
--(void)observeStateOfCBCentermanager:(void(^)(CBManagerState state))stateBlock;
+-(void)observeStateOfCBCentermanager:(void(^)(CBCentralManagerState state))stateBlock;
 
 
 /**

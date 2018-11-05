@@ -301,6 +301,27 @@
 -(void)getBLEHistoryDataWithSuccessCallbackId:(id)successCallbackId  failCallbackId:(id)failCallbackId progressCallbackId:(id)progressCallbackId;
 
 /**
+ *  监听蓝牙适配器状态变化事件
+ *
+ *  @param successCallbackId    接口调用成功的回调函数
+ *  @param failCallbackId       接口调用失败的回调函数
+ *  @param completeCallbackId   接口调用结束的回调函数（调用成功、失败都会执行）
+ 
+ */
+-(void)onBluetoothAdapterStateChangeWithSuccessCallbackId:(id)successCallbackId  failCallbackId:(id)failCallbackId completeCallbackId:(id)completeCallbackId;
+
+
+/**
+ *  获取当前蓝牙适配器状态
+ *
+ *  @param successCallbackId    接口调用成功的回调函数
+ *  @param failCallbackId       接口调用失败的回调函数
+ *  @param completeCallbackId   接口调用结束的回调函数（调用成功、失败都会执行）
+ 
+ */
+-(void)getBluetoothAdapterStateWithSuccessCallbackId:(id)successCallbackId  failCallbackId:(id)failCallbackId completeCallbackId:(id)completeCallbackId;
+
+/**
  *  获取设备信息
  *
  *  @param successCallbackId    接口调用成功的回调函数
@@ -346,6 +367,19 @@
  
  */
 -(void)userLocationWithType:(id)type altitude:(id)altitude successCallbackId:(id)successCallbackId  failCallbackId:(id)failCallbackId  completeCallbackId:(id) completeCallbackId;
+
+/**
+ *  JS调用app端HTTP功能（带het业务）
+ *
+ *  @param host    http请求地址
+ *  @param path    http接口的path
+ *  @param paramJson   配置http参数，以及http请求参数
+ *  @param successCallbackId   接口调用成功的回调函数
+ *  @param failCallbackId    接口调用失败的回调函数
+ 
+ */
+-(void)proxyHttpWithHet:(id)host path:(id)path paramJson:(id)paramJson successCallbackId:(id)successCallbackId  failCallbackId:(id)failCallbackId;
+
 @end
 
 
