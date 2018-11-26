@@ -376,6 +376,26 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
                  BlockWithSuccess:(HETSuccessBlock)success
                           failure:(HETFailureBlock)failure;
 
+/**
+ *  普通网络请求   “accessToken”  “timestamp”  “appId” 会自动添加
+ *
+ *
+ *  @param method     HTTP网络请求方法
+ *  @param requestUrl 网络请求的URL
+ *  @param params     请求参数
+ *  @param needSign   是否需要签名
+ *  @param clife      是否为Clife接口 
+ *  @param success    网络请求成功的回调
+ *  @param failure    网络请求失败的回调
+ */
++(void)startRequestWithHTTPMethod:(HETRequestMethod)method
+                   withRequestUrl:(NSString *)requestUrl
+                    processParams:(NSDictionary *)params
+                         needSign:(BOOL)needSign
+                            clife:(BOOL)clife
+                 BlockWithSuccess:(HETSuccessBlock)success
+                          failure:(HETFailureBlock)failure;
+
 
 
 

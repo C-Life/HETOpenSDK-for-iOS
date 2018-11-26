@@ -34,7 +34,7 @@
 		</data>
 		<key>Headers/HETDeviceRequestBusiness.h</key>
 		<data>
-		sdiuKVmspJupuv3IFkhQe2Z1oN8=
+		bU7f2ckdjjhMO/q++qQIUjXDB28=
 		</data>
 		<key>Headers/HETDeviceShareBusiness.h</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Headers/HETOpenSDK.h</key>
 		<data>
-		dlRtPyxvmODM/t6GVAxwo+sVLGU=
+		BHF3fG6FmZnEbxuMMheqMCQblPc=
 		</data>
 		<key>Headers/HETPeripheral.h</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		mBxBa22wM8x27od0B6WGhwtvfaE=
+		H389WfU6awad0v2HsZviuvp4jds=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -184,11 +184,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sdiuKVmspJupuv3IFkhQe2Z1oN8=
+			bU7f2ckdjjhMO/q++qQIUjXDB28=
 			</data>
 			<key>hash2</key>
 			<data>
-			8QbQk8iMIRFlzXNUgMmzPzs2C/TNl69J4cTrKBl8RKs=
+			bObZ2R74Bl7TORdyuwmV9HhlRQfTTWCvEAE6j/l7+Gg=
 			</data>
 		</dict>
 		<key>Headers/HETDeviceShareBusiness.h</key>
@@ -283,11 +283,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dlRtPyxvmODM/t6GVAxwo+sVLGU=
+			BHF3fG6FmZnEbxuMMheqMCQblPc=
 			</data>
 			<key>hash2</key>
 			<data>
-			Jc87InoC94gu6Z5TFciueHjECVQq42XO4eIeIKKH/wg=
+			tJpIeE38igfcTeNxZHRCfX/A7K1Dw6Qc2SKAyIz9TFc=
 			</data>
 		</dict>
 		<key>Headers/HETPeripheral.h</key>

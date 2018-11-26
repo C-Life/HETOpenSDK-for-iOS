@@ -57,11 +57,24 @@ typedef NS_ENUM (NSInteger, HETAuthPlatformType) {
 + (void)registerAppId:(NSString *)appId
             appSecret:(NSString *)appSecret;
 
+/**
+ *  第三方应用填入授权信息
+ *
+ *  @param openId    授权用户唯一标识
+ *  @param accessToken 接口调用凭证
+ *  @param refreshToken 用于调用accessToken，接口获取授权后的accessToken
+ *  @param expiresIn accessToken接口调用凭证超时时间，单位（秒）
+ *  @param account 帐号：手机号码或邮箱
+ *
+ */
++ (void)registerOpenId:(NSString *)openId
+        accessToken:(NSString *)accessToken refreshToken:(NSString *)refreshToken expiresIn:(NSString *)expiresIn;
+
 
 /**
  *  网络环境配置,需要配置。默认没环境
  *
- *  @param  netWorkConfigType
+ *  @param  netWorkConfigType 环境类型
  */
 + (void)setNetWorkConfig:(HETNetWorkConfigType)netWorkConfigType;
 /**
