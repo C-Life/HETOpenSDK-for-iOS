@@ -8,13 +8,13 @@
 
 Pod::Spec.new do |s|
     s.name = "HETOpenSDK"
-    s.version = "2.1.1"
+    s.version = "2.1.2"
     s.summary = "H&T开放平台SDK"
     s.ios.deployment_target = '8.0'
     s.homepage     = "https://github.com/C-Life/HETOpenSDK-for-iOS"
     s.license      = 'Apache License, Version 2.0'
     s.author       = { "mr.cao" => "340395573@qq.com" }
-    s.source       = { :git => "https://github.com/C-Life/HETOpenSDK-for-iOS.git", :commit => "a1ad09e403ee2d47582bd409a9d104190499698f"}
+    s.source       = { :git => "https://github.com/C-Life/HETOpenSDK-for-iOS.git", :commit => "bb6e8a225de387fce8ee62758477dce796d54835"}
     s.requires_arc = true
     s.default_subspecs = 'HETOpenSDK'
 
