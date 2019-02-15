@@ -32,11 +32,18 @@ typedef void(^UploadProcessBlock)(int64_t bytesSent , int64_t totalBytesSent , i
  *  @param light    拍照测肤的人脸照片亮度
  *  @param sex      拍照测肤照片人的性别      1-男，2-女
  *  @param birthStr 拍照测肤照片人的生日字符串 yyyy-MM-dd
- *  @param takeType 拍照测肤测试类型 （1-测自己,2-测ta人）
+ *  @param takeType 拍照测肤测试类型 （1-测自己,2-测他人）
  *  @param uploadProgressCB  拍照测肤照片上传进度
  *  @param completeBlock     拍照测肤分析结果回调，成功则返回字典，error为nil；失败则返回error.
  */
-- (void)uploadImageToServer:(UIImage *)img distance:(CGFloat)distance light:(CGFloat)light sex:(NSInteger)sex birthStr:(NSString *)birthStr takeType:(NSInteger)takeType setSendProcessBlock:(UploadProcessBlock)uploadProgressCB analysisCompleteBlock:(CompleteBlock)completeBlock;
+- (void)uploadImageToServer:(UIImage *)img
+                   distance:(CGFloat)distance
+                      light:(CGFloat)light
+                        sex:(NSInteger)sex
+                   birthStr:(NSString *)birthStr
+                   takeType:(NSInteger)takeType
+        setSendProcessBlock:(UploadProcessBlock)uploadProgressCB
+      analysisCompleteBlock:(CompleteBlock)completeBlock;
 
 @end
 
