@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
     s.homepage     = "https://github.com/C-Life/HETOpenSDK-for-iOS"
     s.license      = 'Apache License, Version 2.0'
     s.author       = { "mr.cao" => "340395573@qq.com" }
-    s.source       = { :git => "https://github.com/C-Life/HETOpenSDK-for-iOS.git", :commit => "bb6e8a225de387fce8ee62758477dce796d54835"}
+    s.source       = { :git => "https://github.com/C-Life/HETOpenSDK-for-iOS.git", :commit => "83b96992631a5322bbb28194ccf5faee8cc65249"}
     s.requires_arc = true
     s.default_subspecs = 'HETOpenSDK'
 
@@ -29,6 +29,12 @@ Pod::Spec.new do |s|
    # HETMattressDeviceSDK 睡眠带子模块
    s.subspec 'HETMattressDeviceSDK' do |sp|
    sp.vendored_frameworks = 'Optional/HETMattressDeviceSDK.framework'
+   end
+
+   # HETSkinAnalysisSDK 拍照测肤SDK
+   s.subspec 'HETSkinAnalysisSDK' do |sp|
+   sp.vendored_frameworks = 'Optional/HETSkinAnalysisSDK.framework'
+   sp.dependency 'QCloudCOSXML','5.5.6'
    end
 
 end
