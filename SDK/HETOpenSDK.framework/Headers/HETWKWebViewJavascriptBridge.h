@@ -934,4 +934,18 @@
  */
 -(void)webViewUserLocationResponse:(NSDictionary *)dic  callBackId:(id)callBackId;
 
+/**
+ *  APP将视图展现在屏幕上了的事件通知给js
+ *
+ */
+
+-(void)viewAppear;
+
+/**
+ *  APP将视图从屏幕上移除，用户看不到这个视图了的事件通知给js
+ *
+ *
+ */
+-(void)viewDisAppear;
+
 @end
