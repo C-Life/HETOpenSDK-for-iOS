@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
     s.homepage     = "https://github.com/C-Life/HETOpenSDK-for-iOS"
     s.license      = 'Apache License, Version 2.0'
     s.author       = { "mr.cao" => "340395573@qq.com" }
-    s.source       = { :git => "https://github.com/C-Life/HETOpenSDK-for-iOS.git", :commit => "b9284269740f5dd0a369fb0107c68354beb87433"}
+    s.source       = { :git => "https://github.com/C-Life/HETOpenSDK-for-iOS.git", :commit => "ca6c5086e31571374046f767deafdfc2e95d69fa"}
     s.requires_arc = true
     s.default_subspecs = 'HETOpenSDK'
 
