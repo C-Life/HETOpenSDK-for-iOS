@@ -1,0 +1,6 @@
+framework module HETOpenSkinAnalysisSDK {
+  umbrella header "HETOpenSkinAnalysisSDK.h"
+
+  export *
+  module * { export * }
+}
