@@ -37,7 +37,6 @@ typedef void (^cameraRunningBlock) (HETCBCameraStatus cameraStatus,CGFloat dista
 
 /**
  *  用来处理图片翻转90度
- *
  *  @param aImage
  *
  *  @return
