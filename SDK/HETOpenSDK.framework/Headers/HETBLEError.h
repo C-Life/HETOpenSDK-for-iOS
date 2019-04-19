@@ -35,6 +35,10 @@ extern const NSInteger kHETBLERecvPacketDataErrorCode;
 extern const NSInteger kHETBLEMCUVersionErrorCode;
 extern const NSInteger kHETBLEMCUUpdateFileErrorCode;
 extern const NSInteger kHETBLEMCUBinDataErrorCode;
+extern const NSInteger kHETBLEPowerOffErrorCode;
+
+
+extern NSString * const kHETBLEPowerOffErrorCodeErrorMessage;//  @"蓝牙未开启";
 extern NSString * const kHETBLEBoardNameErrorCodeErrorMessage;//  @"未扫到指定的蓝牙广播";
 extern NSString * const kHETBLEConnectErrorCodeErrorMessage ;//  @"扫到但是无法连接上";
 extern NSString * const kHETBLEDisConnectErrorCodeErrorMessage ;//  @"蓝牙断开了";
