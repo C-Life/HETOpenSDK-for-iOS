@@ -100,7 +100,16 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
 
 
 
+/**
+ *  根据设备大类查询APP支持的设备型号
+ *
+ *  @param success  设备列表返回HETDevice对象数组
+ *  @param failure 失败的回调
+ */
 
++ (void)fetchDeviceProductList:(NSString *)deviceTypeId
+                       success:(void (^)(NSArray<HETDevice *>* deviceArray))success
+                       failure:(HETFailureBlock)failure;
 
 /**
  *  解除设备绑定

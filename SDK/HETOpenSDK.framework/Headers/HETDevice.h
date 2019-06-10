@@ -7,7 +7,45 @@
 //
 
 #import <Foundation/Foundation.h>
-
+/*
+ HETDeviceConfigureMode枚举，描述SDK支持的设备配置方式
+ */
+typedef NS_ENUM(NSInteger, HETDeviceConfigureMode) {
+    /*
+     WiFi AP配置模式
+     */
+    HETDeviceAP = 0,
+    
+    
+    /*
+     WiFi smarklink配置模式
+     */
+    HETDeviceSmarklink = 1,
+    
+    /*
+     开放平台蓝牙配置模式
+     */
+    HETDeviceOpenBLE = 2,
+    
+    /*
+     睡眠带子1.5版本的蓝牙配置模式
+     */
+    HETDeviceMattressBLE = 3,
+    
+    /*
+     GPRS配置模式
+     */
+    HETDeviceGPRS = 4,
+    
+    /*
+     音频配置模式
+     */
+    HETDeviceAudio = 5,
+    /*
+     蓝牙转Wi-Fi设备的配置模式
+     */
+    HETDeviceBLEToWiFiLink = 6
+};
 @interface HETDevice : NSObject
 /*********** 用户设备信息 deviceModel 小类列表接口需要用到 ***********/
 @property (nonatomic, copy) NSString *authUserId;//授权设备用户标识
@@ -47,4 +85,5 @@
 @property (nonatomic, copy) NSString *radiocastName;//设备广播名
 @property (nonatomic, copy) NSString *guideUrl;//引导页URL
 @property (nonatomic, strong) NSNumber *moduleType;//模块类型（1-WiFi，2-蓝牙，3-音频，4-GSM，5-红外，6-直连，8-zigbee，9-ap模式）
+@property(nonatomic,  assign)HETDeviceConfigureMode  configureMode;//设备配网模式
 @end

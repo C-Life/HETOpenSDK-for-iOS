@@ -9,19 +9,35 @@
 #import <Foundation/Foundation.h>
 
 @interface HETDeviceVersionModel : NSObject
-@property (nonatomic, strong,getter=theNewDeviceVersion) NSString *newDeviceVersion; //新版本号
-@property (nonatomic, strong) NSNumber *deviceVersionId;//固件版本Id
+@property (nonatomic, copy) NSString *deviceVersionId;
 
-@property (nonatomic, strong) NSString *oldDeviceVersion;//旧版本号
+@property (nonatomic, copy) NSString *oldDeviceVersion;
 
-@property (nonatomic, strong) NSNumber *deviceBleFirmId;//蓝牙固件id
+@property (nonatomic, copy,getter=theNewDeviceVersion) NSString *newDeviceVersion;
 
-@property (nonatomic, strong) NSString *filePath; //升级的bin文件路径
+/*
+ * 注：当wifi设备有蓝牙固件升级时，filePath为蓝牙固件升级文件路径，deviceBleFirmId为蓝牙固件版本信息号，其他信息与之前含义一样。
+ 注：当蓝牙设备有多固件升级时，filePath为蓝牙固件升级文件路径，pcbFilePath为pcb固件升级文件路径。201707111600新增
+ */
+@property (nonatomic, copy) NSString *filePath;
 @property (nonatomic, copy) NSString *pcbFilePath;
-@property (nonatomic, strong) NSString *releaseNote;//修改内容
+@property (nonatomic, copy) NSString *releaseNote;
 
-@property (nonatomic, assign) NSInteger status;//状态（1-普通，2-强制）
+/**
+ *  蓝牙固件版本信息号
+ */
+@property (nonatomic, copy) NSString *deviceBleFirmId;
+
+@property (nonatomic, assign) NSInteger status;
+@end
+
+@interface HETDeviceVersionModel (NeedUpgrade)
+/**
+ *  普通的是否需要升级（下面两个主要是因为有联动升级的原因）
+ */
+-(BOOL)normalNeedUpgrade;
 
 
-
+-(BOOL)wifiNeedUpgrade;
+-(BOOL)bleNeedUpgrade;
 @end
