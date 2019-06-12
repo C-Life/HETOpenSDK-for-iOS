@@ -423,5 +423,38 @@ typedef NS_ENUM(NSUInteger,HETBLEDeviceDataUploadType)
                                     uploadFileInfo:(NSArray<HETFileInfo *>*)fileInfoArray
                                   BlockWithSuccess:(HETSuccessBlock)success
                                            failure:(HETFailureBlock)failure;
+
+
+/**
+ *  普通网络请求
+ *
+ *
+ *  @param method     HTTP网络请求方法，MultipartFormData模式的时候填HETRequestMethodMultipart
+ *  @param requestUrl 网络请求的URL
+ *  @param params     请求参数
+ *  @param fileInfoArray MultipartFormData模式的时候需要上传的文件内容
+ *  @param success    网络请求成功的回调
+ *  @param failure    网络请求失败的回调
+ */
++(void)generalHTTPRequestWithHTTPMethod:(HETRequestMethod)method
+                   withRequestUrl:(NSString *)requestUrl
+                    processParams:(NSDictionary *)params
+                  uploadFileInfo:(NSArray<HETFileInfo *>*)fileInfoArray
+                 BlockWithSuccess:(HETSuccessBlock)success
+                          failure:(HETFailureBlock)failure;
+
+/**
+ *  proxyHttpWithHet JS接口调用app端HTTP功能（带het业务）
+ *
+ *  @param host    http请求地址
+ *  @param path    http接口的path
+ *  @param paramJson   配置http参数，以及http请求参数
+ *  @param success    网络请求成功的回调
+ *  @param failure    网络请求失败的回调
+ 
+ */
++(void)proxyHttpWithHet:(NSString *)host path:(NSString *)path paramJson:(NSString *)paramJson BlockWithSuccess:(HETSuccessBlock)success
+                failure:(HETFailureBlock)failure;
+
 @end
 

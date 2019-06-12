@@ -25,7 +25,7 @@
 #import "HETH5Manager.h"
 #import "HETReachability.h"
 #import "HETBLESmartLink.h"
-extern  NSString * const HETLoginOffNotification;//账号异地登录
+extern NSString *const HETLoginOffNotification;
 typedef NS_ENUM(NSUInteger,HETNetWorkConfigType)
 {
     HETNetWorkConfigType_ITE=0,//内部测试环境

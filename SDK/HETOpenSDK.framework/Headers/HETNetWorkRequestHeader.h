@@ -16,7 +16,8 @@ typedef NS_ENUM(NSInteger , HETRequestMethod) {
     HETRequestMethodHead,
     HETRequestMethodPut,
     HETRequestMethodDelete,
-    HETRequestMethodPatch
+    HETRequestMethodPatch,
+    HETRequestMethodMultipart
 };
 
 typedef NS_ENUM(NSInteger, HETWiFiDeviceState) {
