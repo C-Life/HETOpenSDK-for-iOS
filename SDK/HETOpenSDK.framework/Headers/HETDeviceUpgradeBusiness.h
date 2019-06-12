@@ -12,7 +12,6 @@
 
 @interface HETDeviceUpgradeBusiness : NSObject
 
-
 /**
  *  查询设备固件版本
  *
@@ -20,16 +19,9 @@
  *  @param success  成功的回调
  *  @param failure  失败的回调
  */
-
 +(void)deviceUpgradeCheckWithDeviceId:(NSString *)deviceId
                               success:(void (^)(HETDeviceVersionModel * deviceVersionModel))success
                               failure:(HETFailureBlock)failure;
-
-
-
-
-
-
 
 /**
  *  确认设备升级
@@ -40,17 +32,11 @@
  *  @param success  成功的回调
  *  @param failure  失败的回调
  */
-
 +(void)deviceUpgradeConfirmWithDeviceId:(NSString *)deviceId
                       deviceVersionType:(NSString *)deviceVersionType
-                        deviceVersionModel:(HETDeviceVersionModel *) deviceVersionModel
-                              success:(HETSuccessBlock)success
-                              failure:(HETFailureBlock)failure;
-
-
-
-
-
+                     deviceVersionModel:(HETDeviceVersionModel *) deviceVersionModel
+                                success:(HETSuccessBlock)success
+                                failure:(HETFailureBlock)failure;
 
 /**
  *  查询升级进度，只针对WiFi设备
@@ -58,7 +44,6 @@
  *  @param deviceId          设备标识
  *  @param deviceVersionModel 设备版本类
  *  @param success           成功的回调,Json返回结果：
- 
  {
  "data": {
  "deviceVersionId": 10,
@@ -69,14 +54,10 @@
  }
  *  @param failure           失败的回调
  */
-
 +(void)fetchDeviceUpgradeProgress:(NSString *)deviceId
-                        deviceVersionModel:(HETDeviceVersionModel *)deviceVersionModel
-                                success:(HETSuccessBlock)success
-                                failure:(HETFailureBlock)failure;
-
-
-
+               deviceVersionModel:(HETDeviceVersionModel *)deviceVersionModel
+                          success:(HETSuccessBlock)success
+                          failure:(HETFailureBlock)failure;
 
 /**
  *  升级成功确认
@@ -86,10 +67,8 @@
  *  @param success           成功的回调
  *  @param failure           失败的回调
  */
-
 +(void)deviceUpgradeConfirmSuccessWithDeviceId:(NSString *)deviceId
-                        deviceVersionModel:(HETDeviceVersionModel *) deviceVersionModel
+                            deviceVersionModel:(HETDeviceVersionModel *) deviceVersionModel
                                        success:(HETSuccessBlock)success
                                        failure:(HETFailureBlock)failure;
-
 @end
