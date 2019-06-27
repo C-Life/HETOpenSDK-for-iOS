@@ -948,4 +948,12 @@
  */
 -(void)viewDisAppear;
 
+
+/**
+ *  APP将导航栏高度，电池栏高度通知给js
+ *
+ *
+ */
+-(void)sendNavigationBarHeight:(NSString *)navbarHeight StatusBarHeight:(NSString *)statusBarHeight;
+
 @end
