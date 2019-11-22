@@ -41,9 +41,24 @@ typedef NS_ENUM (NSInteger, HETAuthPlatformType) {
     HETAuthPlatformType_QQ       = 2,    // QQ
 };
 
+
+typedef NS_ENUM(NSInteger, HETNetworkLocalization) {
+    HETNetworkLocalization_zh_CN,  //    zh_CN  简体中文 zh-Hans-CN
+    HETNetworkLocalization_zh_TW,  //    zh_TW  繁体中文（台湾）
+    HETNetworkLocalization_zh_HK,  //    zh_HK  繁体中文（香港）
+    HETNetworkLocalization_en,  //    en    英语
+    HETNetworkLocalization_fr,  //    fr    法语
+    HETNetworkLocalization_de,  //    de    德语
+    HETNetworkLocalization_ja,  //    ja    日语
+    HETNetworkLocalization_it,  //    it    意大利语
+    HETNetworkLocalization_es,  //    es    西班牙语
+    HETNetworkLocalization_ko,  //    ko    韩语
+};
+
 @class HETAuthorizeTheme;
 @interface HETOpenSDK : NSObject
 @property (nonatomic, assign,readonly) HETNetWorkConfigType currentNetWorkConfigType;        // 当前的网络环境
+@property (assign, nonatomic) HETNetworkLocalization localizationType;     // 当前语言版本，默认简体中文
 @property (nonatomic,strong)NSString *openId;
 +(instancetype)shareInstance;
 
